@@ -1,10 +1,8 @@
-# Ansible Role: Drupal
+# Ansible Role: Mukurtu
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-drupal.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-drupal)
+Installs [Mukurtu](https://github.com/MukurtuCMS/mukurtucms), an open source content management platform, on Linux hosts running the generic LAMP stack.
 
-Installs [Drupal](https://drupal.org/), an open source content management platform, on Linux hosts running the generic LAMP stack.
-
-Currently the role is only guaranteed to work on a LAMP stack on Debian/Ubuntu, though only minimal changes will need to be made to make the role with other platforms (notably RedHat/CentOS), and with other webservers besides Apache (thus enabling Drupal on a LEMP stack fairly easily).
+Currently the role is only guaranteed to work on a LAMP stack on RHEL/CentOS, though only minimal changes will need to be made to make the role with other platforms (notably Debian/Ubuntu), and with other webservers besides Apache (thus enabling Drupal on a LEMP stack fairly easily).
 
 ## Requirements
 
@@ -15,15 +13,15 @@ None.
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
     # The core version you want to use (e.g. 6.x, 7.x, 8.0.x).
-    drupal_core_version: "8.0.x"
+    # drupal_core_version: "7.x"
 
 The version of Drupal you would like to use (can be any git branch, tag, or commit ref). Examples: "6.x", "7.x", "8.0.x", "5a3ef30".
 
-    drupal_core_path: "/var/www/drupal-{{ drupal_core_version }}-dev"
+    drupal_core_path: "/var/www/mukurtu"
 
 The path where Drupal will be downloaded and installed (needs to be readable by the webserver).
 
-    drupal_domain: "drupaltest.dev"
+    drupal_domain: "mukurtu"
 
 The domain/DNS name of the drupal site. If using for local testing/development, you can use whatever you want (or keep the default), and add an entry to your `/etc/hosts` file like `127.0.0.1 mytestdrupalsite.com`.
 
@@ -31,7 +29,7 @@ The domain/DNS name of the drupal site. If using for local testing/development, 
 
 The location of the hosts file to manage (see `drupal_domain`). If set to `''`, your hosts file will not be touched.
 
-    drupal_site_name: "Drupal Example"
+    drupal_site_name: "Mukurtu Ansible"
 
 The site name (will be used as the home page title and anywhere else the site name is displayed).
 
@@ -40,17 +38,17 @@ The site name (will be used as the home page title and anywhere else the site na
 
 The username and password for the admin account (user 1).
 
-    drupal_webserver_daemon: apache2
+    drupal_webserver_daemon: httpd
 
 The daemon name for the webserver you're running (could be `apache2`, `httpd`, `nginx`, etc.). Used to restart the appropriate service after Drupal is configured and installed.
 
-    drupal_mysql_user: drupal
+    drupal_mysql_user: root
     drupal_mysql_password: password
-    drupal_mysql_database: drupal
+    drupal_mysql_database: mukurtu
 
 MySQL database username, password, and database name for Drupal to use.
 
-    drupal_repo_url: "http://git.drupal.org/project/drupal.git"
+    drupal_repo_url: "https://github.com/MukurtuCMS/mukurtucms.git"
 
 The public url of the git repository you want to clone. Use `drupal_core_version` to clone a particular branch. (*Note: Usually you shouldn't change this from the default, unless you need to use a private fork of Drupal.*).
 
@@ -78,7 +76,7 @@ The install profile to use. If you're installing Drupal 6.x, you should update t
       vars_files:
         - vars/main.yml
       roles:
-        - { role: geerlingguy.drupal }
+        - { role: rickgrimm.mukurtu }
 
 *Inside `vars/main.yml`*:
 
@@ -88,8 +86,10 @@ The install profile to use. If you're installing Drupal 6.x, you should update t
 
 ## License
 
-MIT / BSD
+MIT / BSD / GPL
 
 ## Author Information
 
-This role was created in 2014 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+This role was originally created in 2014 by [Jeff Geerling](http://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+
+Forked by [rickgrimm] to install Mukurtu CMS built on Drupal https://github.com/MukurtuCMS/mukurtucms
