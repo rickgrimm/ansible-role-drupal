@@ -10,7 +10,7 @@ dependencies:
 
 galaxy_info:
   author: rickgrimm
-  description: Install Mukurtu
+  description: "Install Mukurtu, forked from geerlingguy's ansible-role-drupal."
   company: "Washington State University"
   license: "license (BSD, MIT, GPL)"
   min_ansible_version: 1.8
