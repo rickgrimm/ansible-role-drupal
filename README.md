@@ -72,11 +72,12 @@ The install profile to use. If you're installing Drupal 6.x, you should update t
 
 ## Example Playbook
 
-    - hosts: servers
+    - hosts: all
+      become: yes
       vars_files:
         - vars/main.yml
       roles:
-        - { role: rickgrimm.mukurtu }
+        - rickgrimm.mukurtu
 
 *Inside `vars/main.yml`*:
 
