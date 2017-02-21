@@ -9,9 +9,9 @@ dependencies:
   - geerlingguy.drush
 
 galaxy_info:
-  author: geerlingguy (forked by rickgrimm to install Mukurtu)
-  description: Install Mukurtu - open source platform built with indigenous communities to manage and share digital cultural heritage.
-  company: "Midwestern Mac, LLC" "Washington State University"
+  author: rickgrimm
+  description: Install Mukurtu
+  company: "Washington State University"
   license: "license (BSD, MIT, GPL)"
   min_ansible_version: 1.8
   platforms:
