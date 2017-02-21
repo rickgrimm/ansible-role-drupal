@@ -1,6 +1,6 @@
 # Ansible Role: Mukurtu
 
-Installs [Mukurtu](https://github.com/MukurtuCMS/mukurtucms), an open source content management platform, on Linux hosts running the generic LAMP stack.
+Installs [Mukurtu](https://github.com/MukurtuCMS/mukurtucms), open source platform built with indigenous communities to manage and share digital cultural heritage.
 
 Currently the role is only guaranteed to work on a LAMP stack on RHEL/CentOS, though only minimal changes will need to be made to make the role with other platforms (notably Debian/Ubuntu), and with other webservers besides Apache (thus enabling Drupal on a LEMP stack fairly easily).
 
