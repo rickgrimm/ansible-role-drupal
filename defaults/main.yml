@@ -1,33 +1,33 @@
 ---
 # The core version you want to use (e.g. 6.x, 7.x, 8.0.x).
-drupal_core_version: "8.0.x"
+#drupal_core_version: "7.x"
 
 # The path where Drupal will be downloaded and installed.
-drupal_core_path: "/var/www/drupal-{{ drupal_core_version }}-dev"
+drupal_core_path: "/var/www/mukurtu"
 
 # Your drupal site's domain name (e.g. 'example.com').
-drupal_domain: "drupaltest.dev"
+drupal_domain: "mukurtu"
 
 # Whether to add an entry for the drupal_domain in your /etc/hosts file.
 drupal_hosts_file_path: "/etc/hosts"
 
 # Your Drupal site name.
-drupal_site_name: "Drupal Example"
+drupal_site_name: "Mukurtu Ansible"
 
 # Your Drupal site admin account credentials.
 drupal_admin_name: admin
 drupal_admin_password: admin
 
 # The webserver you're running (e.g. 'apache2', 'httpd', 'nginx').
-drupal_webserver_daemon: apache2
+drupal_webserver_daemon: httpd
 
 # Drupal MySQL database username and password.
-drupal_mysql_user: drupal
+drupal_mysql_user: root
 drupal_mysql_password: password
-drupal_mysql_database: drupal
+drupal_mysql_database: mukurtu
 
 # The Drupal git url from which Drupal will be cloned.
-drupal_repo_url: "http://git.drupal.org/project/drupal.git"
+drupal_repo_url: "https://github.com/MukurtuCMS/mukurtucms.git"
 
 # Whether to update the repo above to the latest commit in the branch identified
 # by `drupal_core_version` (the git tag or branch) whenever this playbook runs.
